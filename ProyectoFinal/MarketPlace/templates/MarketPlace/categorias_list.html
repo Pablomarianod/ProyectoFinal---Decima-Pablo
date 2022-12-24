@@ -1,0 +1,25 @@
+{% extends "MarketPlace/padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+    
+    <h3>Categorías de vehículos del Market Place</h3>
+    <p>Aquí encontraras las diferentes categorías de vehículos disponibles en nuestro sitio.</p>
+
+    
+    <ul>
+        {% for categoria in object_list %}
+            <p>{{categoria.tipo_vehiculo}}</p>
+            <p>
+                <a href="{% url 'DetailC' categoria.id %}">Ver</a>
+                <a href="{% url 'EditC' categoria.id %}">Editar</a>
+                <a href="{% url 'DeleteC' categoria.id %}">Borrar</a>
+            </p>
+        {% endfor %}
+
+    </ul>
+    <a class="btn btn-primary" href="{% url 'BuscarCategoria' %}">Buscar Categoría</a>
+    <a class="btn btn-primary" href="{% url 'Categorias' %}">Agregar Categoría</a>
+
+    {% endblock %}

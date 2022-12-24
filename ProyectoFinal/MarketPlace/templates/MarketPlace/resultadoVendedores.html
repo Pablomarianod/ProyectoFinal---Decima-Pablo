@@ -1,0 +1,24 @@
+{% extends "MarketPlace/padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+    
+
+<p>Resultado para el vendedor: </p>
+
+{%if vendedores%}
+
+<ul>
+    {%for vendedor in vendedores%}
+        <li>Nombre: {{vendedor.nombre}}</li>
+        <li>Telefono: {{vendedor.telefono}}</li>
+        <li>Correo: {{vendedor.Correo}}</li>
+    {%endfor%}
+</ul>
+{%endif%}
+
+<a href="{%url 'ListV'%}">Regresar</a>
+
+{% endblock %}
+

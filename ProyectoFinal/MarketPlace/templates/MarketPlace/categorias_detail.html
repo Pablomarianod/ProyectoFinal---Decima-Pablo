@@ -1,0 +1,12 @@
+{% extends "MarketPlace/padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+<li>Tipo de vehículo: {{categoria.tipo_vehiculo}}</li>
+<li>Combustible: {{categoria.combustible}}</li>
+<li>Cilindrada de motor: {{categoria.cilindrada_motor}}</li>
+
+<a href="{%url 'ListC'%}">Regresar</a>
+
+{% endblock %}

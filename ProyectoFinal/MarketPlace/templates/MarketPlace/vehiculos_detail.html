@@ -1,0 +1,17 @@
+{% extends "MarketPlace/padre.html" %}
+
+{% load static %}
+
+
+{% block contenidoQueCambia %}
+ 
+           
+    <li>Marca: {{vehiculo.marca}}</li>
+    <li>Modelo: {{vehiculo.modelo}}</li>
+    <li>Año: {{vehiculo.año}}</li>
+            
+     
+
+<a href="{%url 'List'%}">Regresar</a>
+
+{% endblock %}

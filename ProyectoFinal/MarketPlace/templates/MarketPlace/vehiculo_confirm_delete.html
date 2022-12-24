@@ -1,0 +1,15 @@
+{% extends "MarketPlace/padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+<form method="post">{% csrf_token %}
+    ¿Estás seguro que deseas borrar el vehiculo "{{object.marca}}"?
+    <input type="submit" value="Eliminar">
+
+</form>
+
+<a href="{%url 'List'%}">Cancelar</a>
+
+{% endblock %}

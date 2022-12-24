@@ -1,0 +1,25 @@
+{% extends "MarketPlace/padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+    
+    <h3>Vendedores registrados en el Market Place</h3>
+    <p>Todos nuestros vendedores cuentan con identidad verificada para mayor seguridad de nuestros compradores.</p>
+
+
+    <ul>
+        {% for vendedor in object_list %}
+            <p>{{vendedor.nombre}}</p>
+            <p>
+                <a href="{% url 'DetailV' vendedor.id %}">Ver</a>
+                <a href="{% url 'EditV' vendedor.id %}">Editar</a>
+                <a href="{% url 'DeleteV' vendedor.id %}">Borrar</a>
+            </p>
+        {% endfor %}
+
+    </ul>
+    <a class="btn btn-primary" href="{% url 'BuscarVendedor' %}">Buscar Vendedor</a>
+    <a class="btn btn-primary" href="{% url 'Vendedores' %}">Agregar Vendedor</a>
+
+    {% endblock %}

@@ -1,0 +1,15 @@
+{% extends "MarketPlace/padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+<form method="post">{% csrf_token %}
+    ¿Estás seguro que deseas borrar el vendedor "{{object.nombre}}"?
+    <input type="submit" value="Eliminar">
+
+</form>
+
+<a href="{%url 'ListV'%}">Cancelar</a>
+
+{% endblock %}
